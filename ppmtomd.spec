@@ -1,15 +1,15 @@
 Summary:	Driver for the Alps Micro-Dry printers and similars
 Name:		ppmtomd
 Version:	1.5
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPL
 Group:		System/Printing
 URL:		http://www.stevens-bradfield.com/ppmtomd/
 Source0:	http://www.stevens-bradfield.com/ppmtomd/ppmtomd-%{version}.tar.gz
 Patch0:		ppmtomd-mdv_conf.diff
 BuildRequires:	netpbm-devel
-Conflicts:	printer-utils-2006 printer-utils-2007
-Conflicts:	printer-filters-2006 printer-filters-2007
+Conflicts:	printer-utils = 2007
+Conflicts:	printer-filters = 2007
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
