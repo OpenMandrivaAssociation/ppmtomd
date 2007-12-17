@@ -10,7 +10,6 @@ Patch0:		ppmtomd-mdv_conf.diff
 BuildRequires:	netpbm-devel
 Conflicts:	printer-utils = 2007
 Conflicts:	printer-filters = 2007
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 A program to convert images from PPM format into the control language for the
