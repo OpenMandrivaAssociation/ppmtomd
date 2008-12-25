@@ -1,16 +1,17 @@
 Summary:	Driver for the Alps Micro-Dry printers and similars
 Name:		ppmtomd
 Version:	1.5
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPL
 Group:		System/Printing
 URL:		http://www.stevens-bradfield.com/ppmtomd/
 Source0:	http://www.stevens-bradfield.com/ppmtomd/ppmtomd-%{version}.tar.gz
 Patch0:		ppmtomd-mdv_conf.diff
+Patch1:		ppmtomd-1.5-LDFLAGS.diff
 BuildRequires:	netpbm-devel
 Conflicts:	printer-utils = 2007
 Conflicts:	printer-filters = 2007
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 A program to convert images from PPM format into the control language for the
@@ -30,13 +31,14 @@ colours.
 
 %setup -q
 %patch0 -p0
+%patch1 -p0
 
 # fix attribs
 chmod 644 *
 
 %build
 
-%make CFLAGS="%{optflags}"
+%make CFLAGS="%{optflags}" LDFLAGS="%{ldflags}"
 
 %install
 rm -rf %{buildroot}
