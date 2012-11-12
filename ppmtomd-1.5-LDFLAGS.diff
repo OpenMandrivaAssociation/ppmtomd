@@ -1,0 +1,19 @@
+--- Makefile	2008-12-25 21:48:04.000000000 +0100
++++ Makefile.oden	2008-12-25 21:49:49.000000000 +0100
+@@ -22,6 +22,7 @@
+ # you do use gcc, don't you?
+ CC = gcc
+ CFLAGS = -O2 -g -Wall
++LDFLAGS = 
+ 
+ # NOTE: optimization is recommended, as this driver does a lot
+ # of work. Switching on optimization *does* change the output
+@@ -39,7 +40,7 @@
+ 
+ OBJS = ppmtomd.o mddata.o photocolcor.o vphotocolcor.o dyesubcolcor.o
+ ppmtomd: $(OBJS)
+-	$(CC) $(CFLAGS) -o ppmtomd $(OBJS) $(LDLIBS) -lnetpbm -lm
++	$(CC) $(CFLAGS) $(LDFLAGS) -o ppmtomd $(OBJS) $(LDLIBS) -lnetpbm -lm
+ 
+ ppmtomd.o: ppmtomd.c mddata.h
+ 	$(CC) $(CDEBUGFLAGS) $(DEFAULTMODEL) -W -Wall -Wstrict-prototypes -c ppmtomd.c 
