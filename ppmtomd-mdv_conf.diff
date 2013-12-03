@@ -1,5 +1,5 @@
---- Makefile	2005-10-22 13:50:03.000000000 +0200
-+++ Makefile.oden	2007-08-14 12:29:32.000000000 +0200
+--- Makefile.orig	2013-12-03 23:14:34.000000000 +0400
++++ Makefile	2013-12-03 23:14:20.000000000 +0400
 @@ -21,6 +21,7 @@
  
  # you do use gcc, don't you?
@@ -12,7 +12,7 @@
  
  OBJS = ppmtomd.o mddata.o photocolcor.o vphotocolcor.o dyesubcolcor.o
  ppmtomd: $(OBJS)
--	$(CC) -o ppmtomd $(OBJS) $(LDLIBS) -lpnm -lppm -lpgm -lpbm -lm
+-	$(CC) -o ppmtomd $(OBJS) $(LDLIBS) -lnetpbm -lm
 +	$(CC) $(CFLAGS) -o ppmtomd $(OBJS) $(LDLIBS) -lnetpbm -lm
  
  ppmtomd.o: ppmtomd.c mddata.h
