@@ -31,9 +31,7 @@ colours.
 %setup -q
 %patch0 -p0
 %patch1 -p0
-%if %{mdkversion} >= 201010
 %patch2 -p1
-%endif
 
 # fix attribs
 chmod 644 *
