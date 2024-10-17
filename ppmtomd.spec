@@ -4,7 +4,7 @@ Version:	1.6
 Release:	14
 License:	GPL
 Group:		System/Printing
-URL:		http://www.stevens-bradfield.com/ppmtomd/
+URL:		https://www.stevens-bradfield.com/ppmtomd/
 Source0:	http://www.stevens-bradfield.com/ppmtomd/%{name}-%{version}.tar.gz
 Patch0:		ppmtomd-mdv_conf.diff
 Patch1:		ppmtomd-1.5-LDFLAGS.diff
